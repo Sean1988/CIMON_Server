@@ -1,0 +1,19 @@
+ <center>Labeling History</center>
+{% for record in sortedRecords.labelRecords %}
+  <p>ID:{{ record.ID}}        Start_Time:{{record.Start_Time}}        End_Time:{{record.End_Time}}        Activity:{{record.Activity}}</p>
+ {% endfor %}
+ <center>Sensor Data</center>
+  <center>Red:105    Black:106    Yellow:107</center>
+ {% for record in sortedRecords.sensorRecords %}
+ {% ifequal record.Sensor "105" %}
+  <p><font color="Red">ID:{{ record.ID}}        Sensor:{{record.Sensor}}        Value:{{record.Value}}        Time_Stamp:{{record.Time_Stamp}}</font></p>
+  {% endifequal %}
+   {% ifequal record.Sensor "106" %}
+  <p><font color="Black">ID:{{ record.ID}}        Sensor:{{record.Sensor}}        Value:{{record.Value}}        Time_Stamp:{{record.Time_Stamp}}</font></p>
+  {% endifequal %}
+     {% ifequal record.Sensor "107" %}
+  <p><font color="Brown">ID:{{ record.ID}}        Sensor:{{record.Sensor}}        Value:{{record.Value}}        Time_Stamp:{{record.Time_Stamp}}</font></p>
+  {% endifequal %}
+ {% endfor %}
+<a href="/Report/">Download Report</a>
+<a href="/Logout/">Log Out</a>

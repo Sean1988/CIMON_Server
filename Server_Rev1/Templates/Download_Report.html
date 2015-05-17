@@ -1,0 +1,19 @@
+{% block content %}
+
+  {% if form.errors %}
+    <p class="error">Sorry, no records in the database.</p>
+  {% endif %}
+
+  <form action="/Report/" method="post">
+     {% csrf_token %}
+     <select name = "table">
+      {% for table in tables %}
+      <option> {{table}} </option>
+      {% endfor %}
+     </select>
+    <input type="submit" value="Download" />
+  </form>
+
+{% endblock %}
+<a href="/Dash_Board/">Dash_Board</a>
+<a href="/Logout/">Log Out</a>

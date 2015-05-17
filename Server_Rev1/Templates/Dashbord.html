@@ -1,0 +1,6 @@
+{% for device in sortedRecords %}
+  <p>ID:<a href="/History/{{ device.ID}}">{{ device.ID}}</a>                               Count of Labeling: {{device.Value}}</p>
+ {% endfor %}
+<a href="/Report/">Download Report</a>
+<a href="/Logout/">Log Out</a>
+
